@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-let URI = 'mongodb://127.0.0.1:27017/usersRegistered'
+let URI = process.env.DB_URI
 
 const connectToDb = async () => {
     try {
