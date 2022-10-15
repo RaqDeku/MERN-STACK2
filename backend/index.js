@@ -10,7 +10,7 @@ const app = express()
 
 app.use(bodyParser.urlencoded({extended:true}))
 
-app.use('/user', require('./routes/userRoutes'))
+app.use('/user', express.json(), require('./routes/userRoutes'))
 
 app.listen(port, () => {
     console.log(`Server is running on ${port}`)

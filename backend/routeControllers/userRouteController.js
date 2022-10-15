@@ -6,9 +6,9 @@ const jwt = require('jsonwebtoken')
 
 //Function for register Users
 const register = asyncHandler(async (req, res) => {
-    const { firstName, lastName, email, password } = req.body;
+    const { name, email, password } = req.body;
     // Checking if all field are filled
-    if(!firstName || !lastName || !email || !password){
+    if(!name || !email || !password){
         res.status(400);
         throw new Error('Please fill all fields');
     }
@@ -25,8 +25,7 @@ const register = asyncHandler(async (req, res) => {
 
     // Creating User
     let user = await User.create({
-        firstName,
-        lastName,
+        name,
         email,
         password:hashedPassword
     })
