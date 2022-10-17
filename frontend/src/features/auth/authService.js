@@ -1,11 +1,11 @@
 import axios from 'axios'
 
 // Sending Request to register User
-let URL = "/user/"
+let URL = "/user"
 
 const register = async (userData) => {
     
-    let response = await axios.post(URL + 'register', userData)
+    let response = await axios.post(URL + '/register', userData)
 
     if (response.data) {
         localStorage.setItem('user', JSON.stringify(response.data))
@@ -16,7 +16,7 @@ const register = async (userData) => {
 
 const login = async (userData) => {
     
-    let response = await axios.post(URL + 'login', userData)
+    let response = await axios.post(URL + '/login', userData)
 
     if (response.data) {
         localStorage.setItem('user', JSON.stringify(response.data))

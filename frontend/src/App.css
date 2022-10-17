@@ -1,19 +1,99 @@
+html {
+  font-family: "Montserrat", sans-serif;
+}
+
+nav {
+  background-color: #f5ba13;
+  margin: auto -16px;
+  padding: 16px 32px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+ul {
+  list-style-type: none;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+  margin-left: 0.1rem;
+}
+header h1 .link {
+  color: #fff;
+  font-family: "McLaren", cursive;
+  font-weight: 400;
+  font-size: 2rem;
+  float: left;
+}
+
+footer {
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+}
+
+footer p {
+  color: rgb(7, 0, 0);
+}
+
 .App {
   text-align: center;
 }
 
 .card {
-  width: 300px;
-  background: #fff;
-  line-height: 3rem;
   text-align: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 300px;
 }
 
 
+.note, .card {
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
+}
+
+.note {
+  margin: 16px;
+  width: 240px;
+  float: left;
+}
+
+.note h1 {
+  font-size: 1.1em;
+  margin-bottom: 6px;
+}
+.note p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.link {
+  text-decoration: none;
+}
+
+button .link {
+  color: rgb(14, 17, 17);
+}
+
+button :hover {
+  color: #f5ba13;
+}
+
+.add_note {
+  background-color: #fff;
+  border-radius: 10%;
+  font-size: 2rem;
+  position: absolute;
+  bottom: 5rem;
+  right: 5rem;
+}
 
 
 

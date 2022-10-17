@@ -65,11 +65,10 @@ const login = asyncHandler(async (req, res) => {
     }
 });
 
+
 // Function for getting user Data
 const getUserData = asyncHandler(async (req, res) => {
-    res.status(200).json({
-        message: 'Get User'
-    })
+    res.status(200).json(req.user)
 })
 
 const generateToken = (id) => {

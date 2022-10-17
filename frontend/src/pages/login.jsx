@@ -6,6 +6,7 @@ import {toast} from 'react-toastify'
 import { login, reset} from '../features/auth/authSlice'
 import Input from '../components/input'
 import Loading from '../components/loading'
+import Footer from '../components/footer'
 
 const Login = () => {
 
@@ -28,8 +29,9 @@ const Login = () => {
     if(isError){
         toast.error(message)
     }
+    
     if(isSuccess || user) {
-        navigate('/')
+        navigate('/dashboard')
         dispatch(reset())
     }
   }, [user, isError, isSuccess, message, navigate, dispatch])
@@ -50,7 +52,6 @@ const Login = () => {
     }
 
     dispatch(login(userData))
-  
   }
 
   if (isLoading) {
@@ -66,7 +67,7 @@ const Login = () => {
             </section>
             <section>
                 <form className='form' onSubmit={onSubmit}>
-                    <div class="form-floating mb-3">
+                    <div className="form-floating mb-3">
                         <Input
                         name='email' 
                         type="email" 
@@ -76,9 +77,9 @@ const Login = () => {
                         value={email} 
 
                         />
-                        <label for="floatingInput">Email address</label>
+                        <label htmlFor="floatingInput">Email address</label>
                     </div>
-                    <div class="form-floating">
+                    <div className="form-floating mb-3">
                         <Input
                         name='password' 
                         type="password" 
@@ -88,15 +89,16 @@ const Login = () => {
                         value={password} 
 
                         />
-                        <label for="floatingPassword">Password</label>
+                        <label htmlFor="floatingPassword">Password</label>
                     </div>
                     <button 
                     type="submit" 
-                    className="btn btn-primary mb-3">Login
+                    className="btn btn-dark mb-3 btn-lg">Login
                     </button>
                 </form>
             </section>
       </div>
+      <Footer />
     </>
   )
 }

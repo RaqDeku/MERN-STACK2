@@ -6,6 +6,7 @@ import Header from './components/header';
 import Login from './pages/login'
 import Register from './pages/register'
 import Dashboard from './pages/dashboard'
+import Homepage from './pages/homepage'
 import './App.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Header />
         <Routes>
           <Route path='/' element={<Dashboard />} />
+          {/* <Route path='/dashboard' element={<Dashboard />} /> */}
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
         </Routes>

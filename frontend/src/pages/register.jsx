@@ -6,6 +6,7 @@ import {toast} from 'react-toastify'
 import { register, reset} from '../features/auth/authSlice'
 import Input from '../components/input'
 import Loading from '../components/loading'
+import Footer from '../components/footer'
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -30,7 +31,7 @@ function Register() {
         toast.error(message)
     }
     if(isSuccess || user) {
-        navigate('/')
+        navigate('/dashboard')
         dispatch(reset())
     }
   }, [user, isError, isSuccess, message, navigate, dispatch])
@@ -71,7 +72,7 @@ function Register() {
             </section>
             <section>
                 <form className='form' onSubmit={onSubmit}>
-                    <div class="form-floating mb-3">
+                    <div className="form-floating mb-3">
                         <Input 
                         name='name'
                         type="text" 
@@ -79,10 +80,9 @@ function Register() {
                         placeHolder="eg. John Parker"
                         onChange={onChange}
                         value={name} />
-                        <label for="floatingInput">Full Name</label>
+                        <label htmlFor="floatingInput">Full Name</label>
                     </div>
-
-                    <div class="form-floating mb-3">
+                    <div className="form-floating mb-3">
                         <Input
                         name='email' 
                         type="email" 
@@ -90,10 +90,10 @@ function Register() {
                         placeHolder="name@example.com"
                         onChange={onChange}
                         value={email} />
-                        <label for="floatingInput">Email address</label>
+                        <label htmlFor="floatingInput">Email address</label>
                     </div>
 
-                    <div class="form-floating">
+                    <div className="form-floating mb-3">
                         <Input
                         name='password' 
                         type="password" 
@@ -101,10 +101,10 @@ function Register() {
                         placeHolder="Password"
                         onChange={onChange}
                         value={password} />
-                        <label for="floatingPassword">Password</label>
+                        <label htmlFor="floatingPassword">Password</label>
                     </div>
 
-                    <div class="form-floating">
+                    <div className="form-floating mb-3">
                         <Input
                         name='password2' 
                         type="password" 
@@ -112,15 +112,16 @@ function Register() {
                         placeHolder="Confirm Password"
                         onChange={onChange}
                         value={password2} />
-                        <label for="floatingPassword">Confirm Password</label>
+                        <label htmlFor="floatingPassword">Confirm Password</label>
                     </div>
                     <button 
                     type="submit" 
-                    className="btn btn-primary mb-3">Register
+                    className="btn btn-dark mb-3">Register
                     </button>
                 </form>
             </section>
       </div>
+      <Footer />
     </>
   )
 }
