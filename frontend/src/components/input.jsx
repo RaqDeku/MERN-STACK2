@@ -1,7 +1,7 @@
 function input(props) {
     return (
-      <input 
-      className="form-control input"
+      <input
+      className="form-control input" 
       id={props.id} 
       type={props.type} 
       name={props.name} 

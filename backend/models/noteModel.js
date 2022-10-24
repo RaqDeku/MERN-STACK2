@@ -7,11 +7,13 @@ let noteModel = monogoose.Schema({
         ref: 'User'
     },
     title: {
-        type:String,
-        require:false,
+        type: String,
     },
 
-    body: String
+    content: {
+        type: String
+    }
+
 }, {
     timestamps:true
 })

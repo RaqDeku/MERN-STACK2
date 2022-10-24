@@ -9,7 +9,7 @@ export const Header = () => {
   let dispatch = useDispatch()
   let navigate = useNavigate()
 
-  let {user} = useSelector((state) => state.auth)
+  const {user} = useSelector(state => state.auth)
 
   function Logout() {
     dispatch(logout())
@@ -18,29 +18,27 @@ export const Header = () => {
   }
   return (
     <>
-      <nav className='row'>
+      <header>
         <div className='container-fluid'>
-        <header>
           <h1><Link className='link' to='/homepage'>Notes</Link></h1>
-            <ul className='col-6'>
+            <ul>
               { user ? (
                   <li>
                     <button className='btn btn-outline-dark' onClick={Logout}><FaSignOutAlt />LogOut</button>
                   </li>
               ) : (
                 <>
-                  <li className='nav-item px-2'>
+                  <li>
                     <button className='btn btn-outline-dark'><Link className='link' to='/login'><FaSignInAlt />Login</Link></button>
                   </li>
-                  <li className='nav-item px-2'>
+                  <li>
                     <button className='btn btn-outline-dark'><Link className='link' to='/register'><FaUserAlt />Register</Link></button>
                   </li>
                 </>
               ) }
             </ul>
-        </header>
         </div>
-      </nav>
+      </header>
     </>
   )
 }

@@ -7,7 +7,7 @@ import Login from './pages/login'
 import Register from './pages/register'
 import Dashboard from './pages/dashboard'
 import Homepage from './pages/homepage'
-import './App.css';
+import './css/App.css';
 
 function App() {
   return (
@@ -15,8 +15,8 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path='/' element={<Dashboard />} />
-          {/* <Route path='/dashboard' element={<Dashboard />} /> */}
+          <Route path='/' element={<Homepage />} />
+          <Route path='/dashboard' element={<Dashboard />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
         </Routes>

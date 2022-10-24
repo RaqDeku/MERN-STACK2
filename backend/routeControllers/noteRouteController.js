@@ -1,18 +1,16 @@
 require('dotenv').config()
 const Note = require('../models/noteModel')
-const User = require('../models/userModel')
 const asyncHandler = require('express-async-handler');
-const user = require('../models/userModel');
 
 // Creating User Note 
 const createNote = asyncHandler(async(req, res) => {
     let note = await Note.create({
-        user:req.user.id,
-        title:req.body.title,
-        body:req.body.body
+        user: req.user.id,
+        title: req.body.title,
+        content: req.body.content
     })
 
-    res.status(200).json({note})
+    res.status(200).json(note)
 })
 
 // Get Notes

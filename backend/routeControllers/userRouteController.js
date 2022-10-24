@@ -52,17 +52,25 @@ const login = asyncHandler(async (req, res) => {
     }
     //Logging User in
     let user = await User.findOne({email})
+
     //Checks if users exist and comparing passwords
-    if (user && bcrypt.compare(user.password, password)) {
-        res.status(200).json({
-            __id:user.id,
-            email:user.email,
-            token: generateToken(user.id)
-        })
+    if (user) {
+        if (bcrypt.compareSync(password, user.password)) {
+            return (
+                res.status(200).json({
+                    __id:user.id,
+                    token:generateToken(user.id)
+                })
+            )
+        } else {
+            res.status(401)
+            throw Error('Invalid email or password')
+        }
     } else {
-        res.status(400)
-        throw Error('Invalid Email or Password')
+        res.status(404)
+        throw Error('User not Found')
     }
+        
 });
 
 

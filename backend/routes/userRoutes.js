@@ -7,7 +7,7 @@ const app = express.Router();
 
 app.post('/register', register);
 app.post('/login', login);
-app.get('/getuser', protect, getUserData);
+// app.get('/getuser', protect, getUserData);
 
 
 module.exports = app

@@ -73,7 +73,8 @@ function Register() {
             <section>
                 <form className='form' onSubmit={onSubmit}>
                     <div className="form-floating mb-3">
-                        <Input 
+                        <Input
+                        className="form-control input" 
                         name='name'
                         type="text" 
                         id="floatingInput" 
@@ -84,6 +85,7 @@ function Register() {
                     </div>
                     <div className="form-floating mb-3">
                         <Input
+                        className="form-control input"
                         name='email' 
                         type="email" 
                         id="floatingInput" 
@@ -95,6 +97,7 @@ function Register() {
 
                     <div className="form-floating mb-3">
                         <Input
+                        className="form-control input"
                         name='password' 
                         type="password" 
                         id="floatingPassword" 

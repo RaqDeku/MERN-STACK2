@@ -3,7 +3,7 @@ import {FaSignInAlt} from 'react-icons/fa'
 import {useSelector , useDispatch} from 'react-redux'
 import {useNavigate} from 'react-router-dom'
 import {toast} from 'react-toastify'
-import { login, reset} from '../features/auth/authSlice'
+import { login, reset } from '../features/auth/authSlice'
 import Input from '../components/input'
 import Loading from '../components/loading'
 import Footer from '../components/footer'
@@ -27,24 +27,24 @@ const Login = () => {
 
   useEffect(() => {
     if(isError){
-        toast.error(message)
-    }
+      toast.error(message)
+    } 
     
     if(isSuccess || user) {
-        navigate('/dashboard')
-        dispatch(reset())
+      dispatch(reset())
+      navigate('/dashboard')
     }
   }, [user, isError, isSuccess, message, navigate, dispatch])
 
   function onChange(e) {
     setFormData((prevState) => ({
-        ...prevState,
-        [e.target.name]:e.target.value
+      ...prevState,
+      [e.target.name]:e.target.value
     }))
   }
 
   function onSubmit(e) {
-    e.preventDefault()
+    // e.preventDefault()
 
     const userData = {
         email,
