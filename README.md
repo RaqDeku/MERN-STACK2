@@ -4,7 +4,10 @@ This is a simple Notes Keeper App with authentication
 
 
 # Usage
-Edit the .env file and add your MONGO_URI
+Create a .env file in the root folder
+1. Add your MONGO_URI as DB_URI
+2. Add your JWT secret key as SECRET_JWT
+3. Add your desired port for the backend as PORT
 
 # Install dependacies
   # Backend
